@@ -20,6 +20,10 @@ variable "size" {
 }
 
 
+variable "DOCKER_REGISTRY_SERVER_URL" {}
 
+variable "DOCKER_REGISTRY_SERVER_USERNAME" {}
+
+variable "DOCKER_REGISTRY_SERVER_PASSWORD" {}
 
 
