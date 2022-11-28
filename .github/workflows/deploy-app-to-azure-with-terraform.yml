@@ -1,4 +1,4 @@
-name: Deploy ReactJS APP to Azure by Terraform
+name: Deploy React APP to Azure by Terraform
 
 on:
     push:
