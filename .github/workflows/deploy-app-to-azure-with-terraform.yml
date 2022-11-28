@@ -24,12 +24,12 @@ jobs:
           
     - name: Terraform Init
       id: init
-      run: terraform init  
+      run: terraform init
       
     - name: Terraform Plan
       id: plan
       run: |
-        terraform plan -var-file = "secrets.tfvars" -lock=false 
+        terraform plan -input=false -var-file = "secrets.tfvars" -no-color 
         
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main'
