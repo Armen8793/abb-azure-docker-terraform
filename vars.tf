@@ -20,10 +20,21 @@ variable "size" {
 }
 
 
-variable "DOCKER_REGISTRY_SERVER_URL" {}
+variable "DOCKER_REGISTRY_SERVER_URL" {
+  type        = string
+  description = "my docker registry server url"
+}
 
-variable "DOCKER_REGISTRY_SERVER_USERNAME" {}
+variable "DOCKER_REGISTRY_SERVER_USERNAME" {
+  type        = string
+  description = "my docker registry username"
 
-variable "DOCKER_REGISTRY_SERVER_PASSWORD" {}
+}
+
+variable "DOCKER_REGISTRY_SERVER_PASSWORD" {
+  type        = string
+  description = "my docker registry password"
+
+}
 
 
