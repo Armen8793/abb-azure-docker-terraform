@@ -31,6 +31,13 @@ jobs:
       run: |
         rm -rf .terraform
         terraform init --reconfigure -upgrade=true -no-color -input=false
+        
+    - name: Export secret variables
+      run: |
+        export ARM_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }}
+        export ARM_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }}
+        export ARM_SUBSCRIPTION_ID=${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        export ARM_TENANT_ID=${{ secrets.AZURE_TENANT_ID }}
       
     - name: Terraform Plan
       id: plan
