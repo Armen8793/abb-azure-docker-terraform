@@ -32,7 +32,7 @@ jobs:
         rm -rf .terraform
         terraform init --reconfigure -upgrade=true -no-color -input=false
         
-    - name: Export secret variables
+    - name: Export secret variable
       run: |
         export ARM_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }}
         export ARM_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }}
