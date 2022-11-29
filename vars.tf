@@ -38,3 +38,9 @@ variable "DOCKER_REGISTRY_SERVER_PASSWORD" {
 }
 
 
+variable "tenant" {
+  type        = string
+  description = "my resource group directory id"
+
+}
+

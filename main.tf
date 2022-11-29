@@ -1,13 +1,12 @@
-resource "azurerm_resource_group" "abb-test-rg" {
-  name     = "abb-res-gr"
-  location = var.location
+data "azurerm_resource_group" "abb-react" {
+  name     = "abb-react-task-demo"
 }
  
 
 resource "azurerm_app_service_plan" "abbplan" {
   name                = "abb-service-plan"
-  location            = azurerm_resource_group.abb-test-rg.location
-  resource_group_name = azurerm_resource_group.abb-test-rg.name
+  location            = data.azurerm_resource_group.abb-react.location
+  resource_group_name = data.azurerm_resource_group.abb-react.name
   kind                = var.os
   reserved            = true
   
@@ -21,8 +20,8 @@ resource "azurerm_app_service_plan" "abbplan" {
 
 resource "azurerm_app_service" "abbapp" {
   name                = "abb-task-app-with-docker-and-terraform"
-  location            = azurerm_resource_group.abb-test-rg.location
-  resource_group_name = azurerm_resource_group.abb-test-rg.name
+  location            = data.azurerm_resource_group.abb-react.location
+  resource_group_name = data.azurerm_resource_group.abb-react.name
   app_service_plan_id = azurerm_app_service_plan.abbplan.id
 
   site_config {
